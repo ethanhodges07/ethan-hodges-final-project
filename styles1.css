@@ -1,217 +1,379 @@
-/* styles1.css — Custom styles for Ethan Hodges professional page */
+/* styles2.css — Custom stylesheet for Brawl Stars Scratch Page */
+/* Required: 4+ style definitions, font color, font family, 3+ divs for positioning */
 
-:root {
-  --navy: #0a1628;
-  --gold: #c9a84c;
-  --cream: #f9f6f0;
-  --card-bg: #ffffff;
-  --text-main: #1a1a2e;
-  --text-muted: #6c757d;
+/* ── 1. Global Reset & Font Family ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Source Sans 3', sans-serif;
-  color: var(--text-main);
-  background-color: var(--cream);
+  font-family: 'Segoe UI', 'Arial Rounded MT Bold', Arial, sans-serif;
+  background-color: #0e1a2b;
+  color: #e8e0d0;
+  line-height: 1.6;
 }
 
-/* ── Navbar ── */
-#mainNav {
-  background-color: transparent;
-  transition: background-color 0.4s ease, padding 0.4s ease;
-  padding-top: 1.2rem;
-  padding-bottom: 1.2rem;
-}
-
-#mainNav.scrolled {
-  background-color: var(--navy);
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-}
-
-.navbar-brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  color: #fff !important;
-  letter-spacing: 1px;
-}
-
-.nav-link {
-  color: rgba(255,255,255,0.85) !important;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: color 0.2s;
-}
-
-.nav-link:hover {
-  color: var(--gold) !important;
-}
-
-/* ── Hero ── */
-.hero-section {
-  min-height: 100vh;
-  background: linear-gradient(135deg, var(--navy) 0%, #1a3a6b 50%, #0a2a50 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.15) 0%, transparent 60%);
-}
-
-.hero-name {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 7vw, 5rem);
-  letter-spacing: 2px;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+/* ── 2. Header Div ── */
+.bs-header {
+  background: linear-gradient(160deg, #1b2d4f 0%, #0e1a2b 60%);
+  border-bottom: 4px solid #f5d020;
+  padding: 2rem 1.5rem 1.5rem;
+  text-align: center;
   position: relative;
 }
 
-.hero-sub {
-  font-size: 1.25rem;
-  letter-spacing: 3px;
-  color: var(--gold);
-  font-weight: 300;
+.bs-logo-area {
+  margin-bottom: 1rem;
+}
+
+.bs-text-logo {
+  font-family: 'Impact', 'Arial Narrow', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: #f5d020;
+  letter-spacing: 6px;
   text-transform: uppercase;
+  text-shadow: 3px 3px 0px #000, 0 0 30px rgba(245,208,32,0.5);
+  margin-bottom: 0.25rem;
 }
 
-/* ── Section Titles ── */
-.section-title {
-  font-family: 'Playfair Display', serif;
-  color: var(--navy);
-  font-size: 2rem;
-  position: relative;
-  display: inline-block;
+.bs-text-logo-star {
+  color: #c9a84c;
+  font-size: 0.7em;
+  vertical-align: middle;
 }
 
-.section-title::after {
-  content: '';
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: var(--gold);
-  margin: 8px auto 0;
+.tagline {
+  font-size: 1rem;
+  color: #f5d020;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  font-family: 'Impact', Arial Narrow, sans-serif;
 }
 
-/* ── Background alternates ── */
-.bg-light-section {
-  background-color: #eef1f7;
-}
-
-/* ── Avatar ── */
-.avatar-circle {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--navy), #1a3a6b);
-  border: 5px solid var(--gold);
-  box-shadow: 0 8px 30px rgba(10,22,40,0.2);
-}
-
-.avatar-initials {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: var(--gold);
-  font-weight: 700;
-}
-
-/* ── Contact badges ── */
-.contact-badges {
+/* ── 3. Navigation ── */
+.bs-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
-.badge-contact {
-  background: var(--navy);
+.bs-nav a {
   color: #fff;
+  text-decoration: none;
+  background: rgba(255,255,255,0.1);
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.85rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+  border: 1px solid rgba(245,208,32,0.3);
 }
 
-/* ── Resume Cards ── */
-.resume-card {
-  background: var(--card-bg);
-  border-radius: 12px;
-  padding: 1.75rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-  border-left: 4px solid var(--gold);
+.bs-nav a:hover {
+  background: #f5d020;
+  color: #0e1a2b;
+}
+
+/* ── 4. Section Divs ── */
+.bs-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.bs-dark {
+  max-width: 100%;
+  background: #071020;
+  padding: 4rem 2rem;
+}
+
+.bs-dark .bs-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ── 5. Headings — font color ── */
+.bs-heading {
+  font-family: 'Impact', 'Arial Narrow', sans-serif;
+  font-size: 2.5rem;
+  color: #f5d020;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.bs-heading.light {
+  color: #f5d020;
+}
+
+.bs-subheading {
+  font-family: 'Impact', 'Arial Narrow', sans-serif;
+  font-size: 1.5rem;
+  color: #f5a623;
+  margin: 1.5rem 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── 6. Body Text — font color + font family ── */
+.bs-text {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 1.05rem;
+  color: #ccc8be;
+  max-width: 800px;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.bs-text.light {
+  color: #b0aaa0;
+}
+
+/* ── 7. Ordered/Unordered Lists ── */
+.bs-ol {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #e8e0d0;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.bs-ol > li {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+  color: #f5d020;
+}
+
+.bs-ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.4rem;
+}
+
+.bs-ul li {
+  font-size: 0.95rem;
+  color: #c8c4b8;
+  font-weight: normal;
+  margin-bottom: 0.25rem;
+}
+
+/* ── 8. Brawler Grid Div ── */
+.brawler-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brawler-card {
+  background: #0e1a2b;
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 4px solid #f5d020;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.resume-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+.brawler-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(245,208,32,0.2);
 }
 
-.card-icon {
-  font-size: 1.8rem;
-  color: var(--gold);
+.brawler-card h4 {
+  font-family: 'Impact', Arial Narrow, sans-serif;
+  font-size: 1.3rem;
+  color: #f5d020;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
 }
 
-.badge-year {
-  background: var(--gold);
-  color: var(--navy);
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.resume-list {
-  padding-left: 1.2rem;
-  margin-bottom: 0;
-}
-
-.resume-list li {
-  margin-bottom: 0.4rem;
-  font-size: 0.95rem;
+.brawler-card p {
+  font-size: 0.9rem;
+  color: #aaa;
   line-height: 1.5;
 }
 
-/* ── Skills ── */
-.skill-badge {
-  background: var(--navy);
-  color: #fff;
+.brawler-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+}
+
+.brawler-fallback {
+  font-size: 3rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 0.75rem;
+}
+
+/* Rarity badge colors */
+.rarity-badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+.common     { background: #888; color: #fff; }
+.rare       { background: #00a8ff; color: #fff; }
+.super-rare { background: #0057e7; color: #fff; }
+.epic       { background: #7b00cc; color: #fff; }
+.mythic     { background: #e91e63; color: #fff; }
+.legendary  { background: #f5d020; color: #0e1a2b; }
+
+/* ── 9. Game Modes Grid Div ── */
+.modes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.mode-card {
+  background: #162035;
   border-radius: 12px;
   padding: 1.5rem 1rem;
-  font-size: 0.9rem;
-  line-height: 1.8;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  border-bottom: 3px solid #f5d020;
   transition: transform 0.2s;
 }
 
-.skill-badge:hover {
-  transform: scale(1.05);
+.mode-card:hover {
+  transform: scale(1.04);
 }
 
-.skill-badge i {
-  font-size: 1.5rem;
-  color: var(--gold);
+.mode-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.trait-pill {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--navy);
-  padding: 6px 18px;
-  border-radius: 30px;
-  font-weight: 700;
+.mode-card h4 {
+  font-family: 'Impact', Arial Narrow, sans-serif;
+  color: #f5d020;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.mode-card p {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* ── 10. Tips Div ── */
+.tips-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: #0e1a2b;
+  padding: 1.25rem;
+  border-radius: 10px;
+}
+
+.tip-num {
+  font-family: 'Impact', Arial Narrow, sans-serif;
+  font-size: 2.5rem;
+  color: #f5d020;
+  line-height: 1;
+  min-width: 50px;
+}
+
+.tip-item h4 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #f5d020;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.tip-item p {
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+/* ── 11. Video Div ── */
+.video-wrap {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.video-wrap iframe {
+  max-width: 100%;
+  border-radius: 12px;
+  border: 3px solid #f5d020;
+  box-shadow: 0 8px 30px rgba(245,208,32,0.2);
+}
+
+/* ── 12. Tableau Div ── */
+.tableau-wrap {
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* ── 13. Back to Top + Footer ── */
+.back-to-top {
+  text-align: center;
+  padding: 2rem;
+  background: #0e1a2b;
+}
+
+.back-to-top a {
+  color: #f5d020;
+  font-family: 'Impact', Arial Narrow, sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+
+.back-to-top a:hover {
+  opacity: 0.7;
+}
+
+.bs-footer {
+  background: #040c18;
+  text-align: center;
+  padding: 2rem;
   font-size: 0.9rem;
-  margin: 4px;
+  color: #666;
+  border-top: 2px solid #f5d020;
 }
 
-/* ── Footer ── */
-.footer-section {
-  background: var(--navy);
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
+/* ── 14. Custom Background Color (body already set, extra section) ── */
+.bs-dark {
+  background-color: #071020;
+}
+
+/* ── 15. Responsive ── */
+@media (max-width: 600px) {
+  .bs-heading { font-size: 1.8rem; }
+  .brawler-grid, .modes-grid { grid-template-columns: 1fr 1fr; }
+  .tip-item { flex-direction: column; gap: 0.5rem; }
 }

@@ -1,0 +1,217 @@
+/* styles1.css — Custom styles for Ethan Hodges professional page */
+
+:root {
+  --navy: #0a1628;
+  --gold: #c9a84c;
+  --cream: #f9f6f0;
+  --card-bg: #ffffff;
+  --text-main: #1a1a2e;
+  --text-muted: #6c757d;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  color: var(--text-main);
+  background-color: var(--cream);
+}
+
+/* ── Navbar ── */
+#mainNav {
+  background-color: transparent;
+  transition: background-color 0.4s ease, padding 0.4s ease;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+#mainNav.scrolled {
+  background-color: var(--navy);
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #fff !important;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.85) !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--gold) !important;
+}
+
+/* ── Hero ── */
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--navy) 0%, #1a3a6b 50%, #0a2a50 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.15) 0%, transparent 60%);
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  letter-spacing: 2px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.hero-sub {
+  font-size: 1.25rem;
+  letter-spacing: 3px;
+  color: var(--gold);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+/* ── Section Titles ── */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--navy);
+  font-size: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--gold);
+  margin: 8px auto 0;
+}
+
+/* ── Background alternates ── */
+.bg-light-section {
+  background-color: #eef1f7;
+}
+
+/* ── Avatar ── */
+.avatar-circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), #1a3a6b);
+  border: 5px solid var(--gold);
+  box-shadow: 0 8px 30px rgba(10,22,40,0.2);
+}
+
+.avatar-initials {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ── Contact badges ── */
+.contact-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badge-contact {
+  background: var(--navy);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Resume Cards ── */
+.resume-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  border-left: 4px solid var(--gold);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.resume-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  color: var(--gold);
+}
+
+.badge-year {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.resume-list {
+  padding-left: 1.2rem;
+  margin-bottom: 0;
+}
+
+.resume-list li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ── Skills ── */
+.skill-badge {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.skill-badge:hover {
+  transform: scale(1.05);
+}
+
+.skill-badge i {
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+.trait-pill {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin: 4px;
+}
+
+/* ── Footer ── */
+.footer-section {
+  background: var(--navy);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}

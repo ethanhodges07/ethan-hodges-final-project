@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brawl Stars Fan Page</title>
+  <link rel="stylesheet" href="styles2.css"/>
+</head>
+<body>
+
+  <!-- On-page anchor target at the very top -->
+  <a id="top"></a>
+
+  <!-- Header / Nav -->
+  <div class="bs-header">
+    <div class="bs-logo-area">
+      <img src="https://static.wikia.nocookie.net/logopedia/images/e/ec/Brawl-Stars-Icon.svg/revision/latest/scale-to-width-down/250?cb=20241020030356" alt="Brawl Stars Logo" class="logo-img"/>
+      <p class="tagline">The Ultimate Brawler Experience</p>
+    </div>
+    <nav class="bs-nav">
+      <a href="#about">About</a>
+      <a href="#brawlers">Brawlers</a>
+      <a href="#gamemodes">Game Modes</a>
+      <a href="#tips">Tips</a>
+      <a href="#watch">Watch</a>
+      <a href="#stats">Stats</a>
+      <a href="index.html">← Back to Portfolio</a>
+      <a href="app.html">🎮 Play Sportle</a>
+    </nav>
+  </div>
+
+  <!-- About Section -->
+  <div id="about" class="bs-section">
+    <h2 class="bs-heading">What is Brawl Stars?</h2>
+    <p class="bs-text">
+      Brawl Stars is a fast-paced multiplayer mobile game developed by <strong>Supercell</strong>, released globally in December 2018.
+      Players choose from a roster of unique characters called <em>Brawlers</em>, each with distinct attacks and abilities.
+      Matches are quick — typically 2–3 minutes — making it perfect for on-the-go gaming.
+    </p>
+    <p class="bs-text">
+      With over <strong>80+ Brawlers</strong>, 15+ game modes, and seasonal events, there's always something new to master.
+      Whether you prefer solo play, duo matches, or 3v3 team fights, Brawl Stars has a mode for you.
+    </p>
+
+    <!-- Ordered list with embedded unordered list — REQUIRED ELEMENT -->
+    <h3 class="bs-subheading">Why Players Love Brawl Stars</h3>
+    <ol class="bs-ol">
+      <li>
+        Fast and accessible gameplay
+        <ul class="bs-ul">
+          <li>Matches last only 2–3 minutes</li>
+          <li>Easy to learn, hard to master</li>
+          <li>Free to play on iOS and Android</li>
+        </ul>
+      </li>
+      <li>
+        Diverse Brawler roster
+        <ul class="bs-ul">
+          <li>Common, Rare, Super Rare, Epic, Mythic, and Legendary rarities</li>
+          <li>Each Brawler has unique stats, a Super, and Gadgets</li>
+          <li>New Brawlers added every season</li>
+        </ul>
+      </li>
+      <li>
+        Competitive depth
+        <ul class="bs-ul">
+          <li>Ranked mode with progressive tiers</li>
+          <li>World Championship esports circuit</li>
+          <li>Club League for team competition</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+
+  <!-- Brawlers Section -->
+  <div id="brawlers" class="bs-section bs-dark">
+    <h2 class="bs-heading light">Meet the Brawlers</h2>
+    <p class="bs-text light">Each Brawler belongs to a class that defines their role in battle.</p>
+
+    <div class="brawler-grid">
+      <div class="brawler-card tank">
+        <img src="https://cdn.brawlstars.com/brawler/bull/avatar/bull_ava_base.png" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" 
+             alt="Tank Brawler" class="brawler-img"/>
+        <div class="brawler-fallback">🐂</div>
+        <h4>Tank</h4>
+        <p>High health, close-range damage. Charges into enemies and dominates tight spaces.</p>
+        <span class="rarity-badge common">Example: Bull</span>
+      </div>
+      <div class="brawler-card sharpshooter">
+        <img src="https://cdn.brawlstars.com/brawler/colt/avatar/colt_ava_base.png"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+             alt="Sharpshooter" class="brawler-img"/>
+        <div class="brawler-fallback">🔫</div>
+        <h4>Sharpshooter</h4>
+        <p>Long range, high damage. Stays back and picks off enemies from a distance.</p>
+        <span class="rarity-badge rare">Example: Colt</span>
+      </div>
+      <div class="brawler-card assassin">
+        <div class="brawler-fallback" style="display:flex">⚡</div>
+        <h4>Assassin</h4>
+        <p>Fast, high burst damage. Dashes in, eliminates a target, and escapes quickly.</p>
+        <span class="rarity-badge epic">Example: Leon</span>
+      </div>
+      <div class="brawler-card support">
+        <div class="brawler-fallback" style="display:flex">💚</div>
+        <h4>Support</h4>
+        <p>Heals allies and controls the battlefield. Essential for coordinated team play.</p>
+        <span class="rarity-badge mythic">Example: Poco</span>
+      </div>
+      <div class="brawler-card controller">
+        <div class="brawler-fallback" style="display:flex">🌀</div>
+        <h4>Controller</h4>
+        <p>Area control specialists. Spreads attacks across zones to deny enemy movement.</p>
+        <span class="rarity-badge legendary">Example: Spike</span>
+      </div>
+      <div class="brawler-card thrower">
+        <div class="brawler-fallback" style="display:flex">💣</div>
+        <h4>Thrower</h4>
+        <p>Lobs projectiles over walls. Hard to counter if hidden, weak up close.</p>
+        <span class="rarity-badge super-rare">Example: Dynamike</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Modes Section -->
+  <div id="gamemodes" class="bs-section">
+    <h2 class="bs-heading">Game Modes</h2>
+    <div class="modes-grid">
+      <div class="mode-card">
+        <div class="mode-icon">💎</div>
+        <h4>Gem Grab</h4>
+        <p>3v3. Collect 10 gems from the center mine and hold them for a countdown to win.</p>
+      </div>
+      <div class="mode-card">
+        <div class="mode-icon">💀</div>
+        <h4>Brawl Ball</h4>
+        <p>3v3 soccer-style. Score 2 goals before the enemy team to win the match.</p>
+      </div>
+      <div class="mode-card">
+        <div class="mode-icon">🏆</div>
+        <h4>Showdown</h4>
+        <p>Solo or Duo battle royale. Be the last Brawler standing on a shrinking map.</p>
+      </div>
+      <div class="mode-card">
+        <div class="mode-icon">🔐</div>
+        <h4>Heist</h4>
+        <p>3v3. Attack the enemy safe while defending your own. Pure offensive chaos.</p>
+      </div>
+      <div class="mode-card">
+        <div class="mode-icon">🌟</div>
+        <h4>Hot Zone</h4>
+        <p>3v3. Capture and hold zones on the map longer than the enemy team.</p>
+      </div>
+      <div class="mode-card">
+        <div class="mode-icon">🎯</div>
+        <h4>Bounty</h4>
+        <p>3v3. Earn stars by eliminating enemies. The team with the most stars wins.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tips Section -->
+  <div id="tips" class="bs-section bs-dark">
+    <h2 class="bs-heading light">Pro Tips for New Players</h2>
+    <div class="tips-list">
+      <div class="tip-item">
+        <span class="tip-num">01</span>
+        <div>
+          <h4>Push bushes carefully</h4>
+          <p>Enemies often hide in bushes waiting to ambush. Tap ahead of you to check before walking in blind.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <span class="tip-num">02</span>
+        <div>
+          <h4>Match your Brawler to the mode</h4>
+          <p>Tanks excel in Brawl Ball. Sharpshooters shine in Bounty. Always check the recommended Brawlers before queuing.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <span class="tip-num">03</span>
+        <div>
+          <h4>Save your Super strategically</h4>
+          <p>Don't waste your Super immediately. Hold it for key moments like breaking open a safe or escaping danger.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <span class="tip-num">04</span>
+        <div>
+          <h4>Play with friends in a Club</h4>
+          <p>Club League rewards are incredible. Playing with coordinated teammates doubles your win rate and fun.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Watch / YouTube Section — REQUIRED embedded video -->
+  <div id="watch" class="bs-section">
+    <h2 class="bs-heading">Watch Brawl Stars in Action</h2>
+    <p class="bs-text">Check out this official Brawl Stars gameplay video to see what the action looks like:</p>
+    <div class="video-wrap">
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/aAvoNk-joZI" 
+        title="Brawl Stars Gameplay" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Tableau Stats Section — REQUIRED embedded Tableau -->
+  <div id="stats" class="bs-section bs-dark">
+    <h2 class="bs-heading light">Mobile Gaming by the Numbers</h2>
+    <p class="bs-text light">Explore global mobile gaming trends — the world Brawl Stars thrives in:</p>
+    <div class="tableau-wrap">
+      <div class='tableauPlaceholder' id='viz1776821551490' style='position: relative'><noscript><a href='#'><img alt='Dashboard: World Map 820 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;3P&#47;3P4RDXJHR&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;3P4RDXJHR' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;3P&#47;3P4RDXJHR&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div><script type='text/javascript'>var divElement = document.getElementById('viz1776821551490'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width='820px';vizElement.style.height='577px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+    </div>
+    <p class="bs-text light" style="text-align:center; margin-top:1rem;">
+      <small>Note: Tableau will not load in VS Code preview — it will display correctly once hosted on GitHub Pages.</small>
+    </p>
+  </div>
+
+  <!-- Back to top anchor link — REQUIRED on-page anchor -->
+  <div class="back-to-top">
+    <a href="#top">↑ Back to Top</a>
+  </div>
+
+  <!-- Footer -->
+  <div class="bs-footer">
+    <p>Brawl Stars Fan Page &mdash; Created by Ethan Hodges &mdash; IS 201</p>
+    <p><a href="index.html" style="color:#f5d020;">← Back to Professional Portfolio</a> &nbsp;|&nbsp; <a href="app.html" style="color:#f5d020;">Play Sportle →</a></p>
+  </div>
+
+</body>
+</html>

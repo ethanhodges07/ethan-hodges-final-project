@@ -1,30 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brawl Stars Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brawl Stars Fan Page</title>
+  <link rel="stylesheet" href="styles2 (2).css"/>
+  <style>
+/* styles2.css — Custom stylesheet for Brawl Stars Scratch Page */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', 'Arial Rounded MT Bold', Arial, sans-serif; background-color: #0e1a2b; color: #e8e0d0; line-height: 1.6; }
+.bs-header { background: linear-gradient(160deg, #1b2d4f 0%, #0e1a2b 60%); border-bottom: 4px solid #f5d020; padding: 2rem 1.5rem 1.5rem; text-align: center; position: relative; }
+.bs-logo-area { margin-bottom: 1rem; }
+.bs-text-logo { font-family: 'Impact', 'Arial Narrow', sans-serif; font-size: clamp(2rem, 6vw, 3.5rem); color: #f5d020; letter-spacing: 6px; text-transform: uppercase; text-shadow: 3px 3px 0px #000, 0 0 30px rgba(245,208,32,0.5); margin-bottom: 0.25rem; }
+.bs-text-logo-star { color: #c9a84c; font-size: 0.7em; vertical-align: middle; }
+.tagline { font-size: 1rem; color: #f5d020; letter-spacing: 3px; text-transform: uppercase; margin-top: 0.5rem; font-family: 'Impact', Arial Narrow, sans-serif; }
+.bs-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
+.bs-nav a { color: #fff; text-decoration: none; background: rgba(255,255,255,0.1); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; transition: background 0.2s, color 0.2s; border: 1px solid rgba(245,208,32,0.3); }
+.bs-nav a:hover { background: #f5d020; color: #0e1a2b; }
+.bs-section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+.bs-dark { max-width: 100%; background: #071020; padding: 4rem 2rem; }
+.bs-dark .bs-section { max-width: 1100px; margin: 0 auto; padding: 0; }
+.bs-heading { font-family: 'Impact', 'Arial Narrow', sans-serif; font-size: 2.5rem; color: #f5d020; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+.bs-heading.light { color: #f5d020; }
+.bs-subheading { font-family: 'Impact', 'Arial Narrow', sans-serif; font-size: 1.5rem; color: #f5a623; margin: 1.5rem 0 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+.bs-text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 1.05rem; color: #ccc8be; max-width: 800px; margin-bottom: 1rem; line-height: 1.8; }
+.bs-text.light { color: #b0aaa0; }
+.bs-ol { font-family: 'Segoe UI', Arial, sans-serif; color: #e8e0d0; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+.bs-ol > li { font-size: 1.05rem; margin-bottom: 0.75rem; font-weight: bold; color: #f5d020; }
+.bs-ul { list-style-type: disc; padding-left: 1.5rem; margin-top: 0.4rem; }
+.bs-ul li { font-size: 0.95rem; color: #c8c4b8; font-weight: normal; margin-bottom: 0.25rem; }
+.brawler-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2rem; max-width: 1100px; margin-left: auto; margin-right: auto; }
+.brawler-card { background: #0e1a2b; border-radius: 14px; padding: 1.5rem; text-align: center; border-top: 4px solid #f5d020; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.brawler-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(245,208,32,0.2); }
+.brawler-card h4 { font-family: 'Impact', Arial Narrow, sans-serif; font-size: 1.3rem; color: #f5d020; text-transform: uppercase; margin-bottom: 0.5rem; }
+.brawler-card p { font-size: 0.9rem; color: #aaa; line-height: 1.5; }
+.brawler-img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 0.75rem; }
+.brawler-fallback { font-size: 3rem; display: none; justify-content: center; align-items: center; width: 80px; height: 80px; margin: 0 auto 0.75rem; }
+.rarity-badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-top: 0.5rem; text-transform: uppercase; }
+.common { background: #888; color: #fff; }
+.rare { background: #00a8ff; color: #fff; }
+.super-rare { background: #0057e7; color: #fff; }
+.epic { background: #7b00cc; color: #fff; }
+.mythic { background: #e91e63; color: #fff; }
+.legendary { background: #f5d020; color: #0e1a2b; }
+.modes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.mode-card { background: #162035; border-radius: 12px; padding: 1.5rem 1rem; text-align: center; border-bottom: 3px solid #f5d020; transition: transform 0.2s; }
+.mode-card:hover { transform: scale(1.04); }
+.mode-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.mode-card h4 { font-family: 'Impact', Arial Narrow, sans-serif; color: #f5d020; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 0.5rem; }
+.mode-card p { font-size: 0.85rem; color: #999; }
+.tips-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+.tip-item { display: flex; align-items: flex-start; gap: 1.5rem; background: #0e1a2b; padding: 1.25rem; border-radius: 10px; }
+.tip-num { font-family: 'Impact', Arial Narrow, sans-serif; font-size: 2.5rem; color: #f5d020; line-height: 1; min-width: 50px; }
+.tip-item h4 { font-family: 'Segoe UI', Arial, sans-serif; color: #f5d020; font-size: 1.1rem; margin-bottom: 0.4rem; }
+.tip-item p { font-size: 0.95rem; color: #aaa; }
+.video-wrap { text-align: center; margin-top: 1.5rem; }
+.video-wrap iframe { max-width: 100%; border-radius: 12px; border: 3px solid #f5d020; box-shadow: 0 8px 30px rgba(245,208,32,0.2); }
+.tableau-wrap { margin-top: 2rem; background: #fff; border-radius: 12px; overflow: hidden; padding: 1rem; }
+.back-to-top { text-align: center; padding: 2rem; background: #0e1a2b; }
+.back-to-top a { color: #f5d020; font-family: 'Impact', Arial Narrow, sans-serif; font-size: 1.1rem; letter-spacing: 2px; text-decoration: none; text-transform: uppercase; transition: opacity 0.2s; }
+.back-to-top a:hover { opacity: 0.7; }
+.bs-footer { background: #040c18; text-align: center; padding: 2rem; font-size: 0.9rem; color: #666; border-top: 2px solid #f5d020; }
+@media (max-width: 600px) { .bs-heading { font-size: 1.8rem; } .brawler-grid, .modes-grid { grid-template-columns: 1fr 1fr; } .tip-item { flex-direction: column; gap: 0.5rem; } }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Brawl Stars</h1>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="index.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>The Game</h2>
-            <p>Brawl Stars is a multiplayer online battle game developed and published by Supercell.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Brawl Stars</p>
-    </footer>
+
+  <!-- On-page anchor target at the very top -->
+  <a id="top"></a>
+
+  <!-- Header / Nav -->
+  <div class="bs-header">
+    <div class="bs-logo-area">
+      <div class="bs-text-logo">
+        <span class="bs-text-logo-star">★</span> BRAWL STARS <span class="bs-text-logo-star">★</span>
+      </div>
+      <p class="tagline">The Ultimate Brawler Experience</p>
+    </div>
+    <nav class="bs-nav">
+      <a href="#about">About</a>
+      <a href="#brawlers">Brawlers</a>
+      <a href="#gamemodes">Game Modes</a>
+      <a href="#tips">Tips</a>
+      <a href="#watch">Watch</a>
+      <a href="#stats">Stats</a>
+      <a href="professional.html">← Back to Portfolio</a>
+      <a href="app.html">🎮 Play Sportle</a>
+    </nav>
+  </div>
+
+  <!-- About Section -->
+  <div id="about" class="bs-section">
+    <h2 class="bs-heading">What is Brawl Stars?</h2>
+    <p class="bs-text">
+      Brawl Stars is a fast-paced multiplayer mobile game developed by <strong>Supercell</strong>, released globally in December 2018.
+      Players choose from a roster of unique characters called <em>Brawlers</em>, each with distinct attacks and abilities.
+      Matches are quick — typically 2–3 minutes — making it perfect for on-the-go gaming.
+    </p>
+    <p class="bs-text">
+      With over <strong>80+ Brawlers</strong>, 15+ game modes, and seasonal events, there's always something new to master.
+      Whether you prefer solo play, duo matches, or 3v3 team fights, Brawl Stars has a mode for you.
+    </p>
+
+    <!-- Ordered list with embedded unordered list — REQUIRED ELEMENT -->
+    <h3 class="bs-subheading">Why Players Love Brawl Stars</h3>
+    <ol class="bs-ol">
+      <li>
+        Fast and accessible gameplay
+        <ul class="bs-ul">
+          <li>Matches last only 2–3 minutes</li>
+          <li>Easy to learn, hard to master</li>
+          <li>Free to play on iOS and Android</li>
+        </ul>
+      </li>
+      <li>
+        Diverse Brawler roster
+        <ul class="bs-ul">
+          <li>Common, Rare, Super Rare, Epic, Mythic, and Legendary rarities</li>
+          <li>Each Brawler has unique stats, a Super, and Gadgets</li>
+          <li>New Brawlers added every season</li>
+        </ul>
+      </li>
+      <li>
+        Competitive depth
+        <ul class="bs-ul">
+          <li>Ranked mode with progressive tiers</li>
+          <li>World Championship esports circuit</li>
+          <li>Club League for team competition</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+
+  <!-- Brawlers Section -->
+  <div id="brawlers" class="bs-section bs-dark">
+    <h2 class="bs-heading light">Meet the Brawlers</h2>
+    <p class="bs-text light">Each Brawler belongs to a class that defines their role in battle.</p>
+
+    <div class="brawler-grid">
+      <div class="brawler-card tank">
+        <img src="https://cdn.brawlstars.com/brawler/bull/avatar/bull_ava_base.png" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" 
+             alt="Tank Brawler" class="brawler-img"/>
+        <div class="brawler-fallback">🐂</div>
+        <h4>Tank</h4>
+        <p>High health, close-range damage. Charges into enemies and dominates tight spaces.</p>
+        <span class="rarity-badge common">Example: Bull</span>
+      </div>
+      <div class="brawler-card sharpshooter">
+        <img src="https://cdn.brawlstars.com/brawler/colt/avatar/colt_ava_base.png"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+             alt="Sharpshooter" class="brawler-img"/>
+        <div class="brawler-fallback">🔫</div>
+        <h4>Sharpshooter</h4>
+        <p>Long range, high damage. Stays back and picks off enemies from a distance.</p>
+        <span class="rarity-badge rare">Example: Colt</span>
+      </div>
+      <div class="brawler-card assassin">
+        <div class="brawler-fallback" style="display:flex">⚡</div>
+        <h4>Assassin</h4>
+        <p>Fast, high burst damage. Dashes in, eliminates a target, and escapes quickly.</p>
+        <span class="rarity-badge epic">Example: Leon</span>
+      </div>
+      <div class="brawler-card support">
+        <div class="brawler-fallback" style="display:flex">💚</div>
+        <h4>Support</h4>
+        <p>Heals allies and controls the battlefield. Essential for coordinated team play.</p>
+        <span class="rarity-badge mythic">Example: Poco</span>
+      </div>
+      <div class="brawler-card controller">
+        <div class="brawler-fallback" style="display:flex">🌀</div>
+        <h4>Controller</h4>
+        <p>Area control specialists. Spreads attacks across zones to deny enemy movement.</p>
+        <span class="rarity-badge legendary">Example: Spike</span>
+      </div>
+      <div class="brawler-card thrower">
+        <div class="brawler-fallback" style="display:flex">💣</div>
+        <h4>Thrower</h4>
+        <p>Lobs projectiles over walls. Hard to counter if hidden, weak up close.</p>
+        <span class="rarity-badge super-rare">Example: Dynamike</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Modes Section -->
+  <div id="gamemodes" class="bs-section">
+    <h2 class="bs-heading">Game Modes</h2>
+    <div class="modes-grid">
+      <div class="mode-card">
+        <div class="mode-icon">💎</div>
+        <h4>Gem Grab</h4>
+        <p>3v3. Collect 10 gems from the center mine and hold them for a countdown to win.</p>
+      </div>
+      <div class="mode-card">
+        <div class="mode-icon">💀</div>
+        <h4>Brawl Ball</h4>
+        <p>3v3 soccer-style. Score 2 goals before the enemy team to win the match.</p>
+      </div>
+      <div class="mode-card">
+        <div class="mode-icon">🏆</div>
+        <h4>Showdown</h4>
+        <p>Solo or Duo battle royale. Be the last Brawler standing on a shrinking map.</p>
+      </div>
+      <div class="mode-card">
+        <div class="mode-icon">🔐</div>
+        <h4>Heist</h4>
+        <p>3v3. Attack the enemy safe while defending your own. Pure offensive chaos.</p>
+      </div>
+      <div class="mode-card">
+        <div class="mode-icon">🌟</div>
+        <h4>Hot Zone</h4>
+        <p>3v3. Capture and hold zones on the map longer than the enemy team.</p>
+      </div>
+      <div class="mode-card">
+        <div class="mode-icon">🎯</div>
+        <h4>Bounty</h4>
+        <p>3v3. Earn stars by eliminating enemies. The team with the most stars wins.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tips Section -->
+  <div id="tips" class="bs-section bs-dark">
+    <h2 class="bs-heading light">Pro Tips for New Players</h2>
+    <div class="tips-list">
+      <div class="tip-item">
+        <span class="tip-num">01</span>
+        <div>
+          <h4>Push bushes carefully</h4>
+          <p>Enemies often hide in bushes waiting to ambush. Tap ahead of you to check before walking in blind.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <span class="tip-num">02</span>
+        <div>
+          <h4>Match your Brawler to the mode</h4>
+          <p>Tanks excel in Brawl Ball. Sharpshooters shine in Bounty. Always check the recommended Brawlers before queuing.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <span class="tip-num">03</span>
+        <div>
+          <h4>Save your Super strategically</h4>
+          <p>Don't waste your Super immediately. Hold it for key moments like breaking open a safe or escaping danger.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <span class="tip-num">04</span>
+        <div>
+          <h4>Play with friends in a Club</h4>
+          <p>Club League rewards are incredible. Playing with coordinated teammates doubles your win rate and fun.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Watch / YouTube Section — REQUIRED embedded video -->
+  <div id="watch" class="bs-section">
+    <h2 class="bs-heading">Watch Brawl Stars in Action</h2>
+    <p class="bs-text">Check out this official Brawl Stars gameplay video to see what the action looks like:</p>
+    <div class="video-wrap">
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/aAvoNk-joZI" 
+        title="Brawl Stars Gameplay" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Tableau Stats Section — REQUIRED embedded Tableau -->
+  <div id="stats" class="bs-section bs-dark">
+    <h2 class="bs-heading light">Global Gaming by the Numbers</h2>
+    <p class="bs-text light" style="text-align:center;">Explore this interactive Tableau visualization — hover, click, and filter to explore the data!</p>
+    <div class="tableau-wrap">
+      <div class='tableauPlaceholder' id='viz1776821551490' style='position: relative'><noscript><a href='#'><img alt='Dashboard: World Map 820 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;3P&#47;3P4RDXJHR&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;3P4RDXJHR' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;3P&#47;3P4RDXJHR&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div><script type='text/javascript'>var divElement = document.getElementById('viz1776821551490'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width='820px';vizElement.style.height='577px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+    </div>
+    <p class="bs-text light" style="text-align:center; margin-top:1rem;">
+      <small>Note: Tableau will not load in VS Code preview — it will display correctly once hosted on GitHub Pages.</small>
+    </p>
+  </div>
+
+  <!-- Back to top anchor link — REQUIRED on-page anchor -->
+  <div class="back-to-top">
+    <a href="#top">↑ Back to Top</a>
+  </div>
+
+  <!-- Footer -->
+  <div class="bs-footer">
+    <p>Brawl Stars Fan Page &mdash; Created by Ethan Hodges &mdash; IS 201</p>
+    <p><a href="professional.html" style="color:#f5d020;">← Back to Professional Portfolio</a> &nbsp;|&nbsp; <a href="app.html" style="color:#f5d020;">Play Sportle →</a></p>
+  </div>
+
 </body>
 </html>

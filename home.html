@@ -1,256 +1,721 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ethan Hodges</title>
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet"/>
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles1.css"/>
+  <title>Sportle — Sports Wordle</title>
   <style>
-:root { --navy: #0a1628; --gold: #c9a84c; --cream: #f9f6f0; --card-bg: #ffffff; --text-main: #1a1a2e; --text-muted: #6c757d; }
-body { font-family: 'Source Sans 3', sans-serif; color: var(--text-main); background-color: var(--cream); }
-#mainNav { background-color: transparent; transition: background-color 0.4s ease, padding 0.4s ease; padding-top: 1.2rem; padding-bottom: 1.2rem; }
-#mainNav.scrolled { background-color: var(--navy); padding-top: 0.6rem; padding-bottom: 0.6rem; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
-.navbar-brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #fff !important; letter-spacing: 1px; }
-.nav-link { color: rgba(255,255,255,0.85) !important; font-weight: 600; letter-spacing: 0.5px; transition: color 0.2s; }
-.nav-link:hover { color: var(--gold) !important; }
-.hero-section { min-height: 100vh; background: linear-gradient(135deg, var(--navy) 0%, #1a3a6b 50%, #0a2a50 100%); position: relative; overflow: hidden; }
-.hero-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.15) 0%, transparent 60%); }
-.hero-name { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 7vw, 5rem); letter-spacing: 2px; text-shadow: 0 4px 20px rgba(0,0,0,0.4); position: relative; }
-.hero-sub { font-size: 1.25rem; letter-spacing: 3px; color: var(--gold); font-weight: 300; text-transform: uppercase; }
-.section-title { font-family: 'Playfair Display', serif; color: var(--navy); font-size: 2rem; position: relative; display: inline-block; }
-.section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--gold); margin: 8px auto 0; }
-.bg-light-section { background-color: #eef1f7; }
-.avatar-circle { width: 160px; height: 160px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), #1a3a6b); border: 5px solid var(--gold); box-shadow: 0 8px 30px rgba(10,22,40,0.2); }
-.avatar-initials { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); font-weight: 700; }
-.contact-badges { display: flex; flex-wrap: wrap; gap: 10px; }
-.badge-contact { background: var(--navy); color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; }
-.resume-card { background: var(--card-bg); border-radius: 12px; padding: 1.75rem; box-shadow: 0 4px 20px rgba(0,0,0,0.07); border-left: 4px solid var(--gold); transition: transform 0.25s ease, box-shadow 0.25s ease; }
-.resume-card:hover { transform: translateY(-4px); box-shadow: 0 10px 35px rgba(0,0,0,0.12); }
-.card-icon { font-size: 1.8rem; color: var(--gold); }
-.badge-year { background: var(--gold); color: var(--navy); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
-.resume-list { padding-left: 1.2rem; margin-bottom: 0; }
-.resume-list li { margin-bottom: 0.4rem; font-size: 0.95rem; line-height: 1.5; }
-.skill-badge { background: var(--navy); color: #fff; border-radius: 12px; padding: 1.5rem 1rem; font-size: 0.9rem; line-height: 1.8; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.2s; }
-.skill-badge:hover { transform: scale(1.05); }
-.skill-badge i { font-size: 1.5rem; color: var(--gold); }
-.trait-pill { display: inline-block; background: var(--gold); color: var(--navy); padding: 6px 18px; border-radius: 30px; font-weight: 700; font-size: 0.9rem; margin: 4px; }
-.footer-section { background: var(--navy); font-size: 0.9rem; letter-spacing: 0.5px; }
+    /* ── Reset & Base ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0a1628;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── Header ── */
+    header {
+      width: 100%;
+      background: #0d1f3c;
+      border-bottom: 3px solid #c9a84c;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+      color: #c9a84c;
+      text-transform: uppercase;
+    }
+
+    header .subtitle {
+      font-size: 0.75rem;
+      color: #aaa;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .help-btn {
+      background: transparent;
+      border: 2px solid #c9a84c;
+      color: #c9a84c;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .help-btn:hover { background: #c9a84c; color: #0a1628; }
+
+    /* ── Back Link ── */
+    .back-bar {
+      width: 100%;
+      max-width: 500px;
+      padding: 0.6rem 1rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .back-bar a {
+      color: #c9a84c;
+      text-decoration: none;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+    .back-bar a:hover { opacity: 1; text-decoration: underline; }
+
+    /* ── Message Bar ── */
+    #message {
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #f5d020;
+      text-transform: uppercase;
+    }
+
+    /* ── Game Board ── */
+    #board {
+      display: grid;
+      grid-template-rows: repeat(6, 1fr);
+      gap: 6px;
+      padding: 10px;
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+    }
+
+    .tile {
+      width: 100%;
+      aspect-ratio: 1;
+      border: 2px solid #3a4a60;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #fff;
+      background: #0a1628;
+      transition: border-color 0.1s;
+      position: relative;
+      user-select: none;
+    }
+
+    .tile.filled { border-color: #6a7a90; }
+    .tile.active { border-color: #c9a84c; }
+
+    /* Flip animation */
+    .tile.flip {
+      animation: flipTile 0.5s ease forwards;
+    }
+
+    @keyframes flipTile {
+      0%   { transform: rotateX(0deg); }
+      50%  { transform: rotateX(90deg); background: #0a1628; }
+      100% { transform: rotateX(0deg); }
+    }
+
+    .tile.correct  { background: #2e7d32; border-color: #2e7d32; }
+    .tile.present  { background: #b7831a; border-color: #b7831a; }
+    .tile.absent   { background: #2a3545; border-color: #2a3545; color: #888; }
+
+    /* Pop animation when typing */
+    .tile.pop {
+      animation: popTile 0.1s ease;
+    }
+    @keyframes popTile {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.12); }
+      100% { transform: scale(1); }
+    }
+
+    /* Shake on invalid word */
+    .row.shake {
+      animation: shakeRow 0.4s ease;
+    }
+    @keyframes shakeRow {
+      0%,100% { transform: translateX(0); }
+      20%     { transform: translateX(-8px); }
+      40%     { transform: translateX(8px); }
+      60%     { transform: translateX(-5px); }
+      80%     { transform: translateX(5px); }
+    }
+
+    /* ── Keyboard ── */
+    #keyboard {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .kb-row {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .key {
+      height: 56px;
+      min-width: 36px;
+      padding: 0 6px;
+      background: #1e3050;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      flex: 1;
+      max-width: 42px;
+    }
+
+    .key.wide { max-width: 66px; font-size: 0.75rem; }
+    .key:hover { background: #2a4070; }
+    .key:active { transform: scale(0.95); }
+    .key.correct { background: #2e7d32; }
+    .key.present { background: #b7831a; }
+    .key.absent  { background: #111d2e; color: #555; }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    .modal-overlay.hidden { display: none; }
+
+    .modal-box {
+      background: #0d1f3c;
+      border: 2px solid #c9a84c;
+      border-radius: 14px;
+      padding: 2rem;
+      max-width: 380px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .modal-box h2 {
+      font-size: 1.5rem;
+      color: #c9a84c;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .modal-box p { color: #ccc; line-height: 1.7; margin-bottom: 0.75rem; }
+    .modal-box .answer-reveal { font-size: 1.4rem; font-weight: 900; color: #f5d020; margin: 0.5rem 0; }
+    .modal-box .hint-row { display: flex; align-items: center; gap: 8px; justify-content: center; margin-bottom: 0.5rem; }
+    .modal-box .hint-tile {
+      width: 36px; height: 36px; border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 1rem; text-transform: uppercase;
+    }
+    .modal-box .hint-tile.correct { background: #2e7d32; }
+    .modal-box .hint-tile.present { background: #b7831a; }
+    .modal-box .hint-tile.absent  { background: #2a3545; }
+
+    .btn-play-again {
+      background: #c9a84c;
+      color: #0a1628;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-play-again:hover { background: #f5d020; transform: scale(1.03); }
+
+    .close-modal {
+      position: absolute; top: 12px; right: 16px;
+      background: none; border: none; color: #888;
+      font-size: 1.5rem; cursor: pointer;
+    }
+    .close-modal:hover { color: #fff; }
+
+    /* ── Category badge ── */
+    .category-badge {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #666;
+      padding: 0.25rem 0.5rem;
+      background: #111d2e;
+      border-radius: 20px;
+      margin-bottom: 4px;
+    }
+
+    /* ── Stats row ── */
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+    .stat-box { text-align: center; }
+    .stat-num { font-size: 1.8rem; font-weight: 900; color: #f5d020; }
+    .stat-label { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Ethan Hodges</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#leadership">Leadership</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        </ul>
+  <!-- Help Modal -->
+  <div class="modal-overlay" id="helpModal">
+    <div class="modal-box" style="position:relative;">
+      <button class="close-modal" onclick="document.getElementById('helpModal').classList.add('hidden')">✕</button>
+      <h2>How to Play Sportle</h2>
+      <p>Guess the 5-letter <strong>sports word</strong> in 6 tries.</p>
+      <p>After each guess, tiles change color:</p>
+      <div class="hint-row" style="margin-top:0.75rem;">
+        <div class="hint-tile correct">G</div>
+        <p>Correct letter, correct spot</p>
       </div>
+      <div class="hint-row">
+        <div class="hint-tile present">O</div>
+        <p>Right letter, wrong spot</p>
+      </div>
+      <div class="hint-row">
+        <div class="hint-tile absent">X</div>
+        <p>Letter not in the word</p>
+      </div>
+      <p style="margin-top:0.75rem; font-size:0.85rem; color:#888;">Words are sports-related: positions, equipment, verbs, venues, and more!</p>
     </div>
-  </nav>
+  </div>
 
-  <!-- Hero -->
-  <header class="hero-section d-flex align-items-center justify-content-center text-center text-white">
-    <div>
-      <h1 class="display-3 fw-bold hero-name">Ethan R. Hodges</h1>
-      <p class="lead hero-sub">Student &bull; Leader &bull; Community Builder</p>
-      <a href="#about" class="btn btn-outline-light btn-lg mt-3">Learn More</a>
+  <!-- End Modal -->
+  <div class="modal-overlay hidden" id="endModal">
+    <div class="modal-box" style="position:relative;">
+      <h2 id="endTitle">Well Done!</h2>
+      <div id="endBody"></div>
+      <div class="stats-row" id="statsRow"></div>
+      <button class="btn-play-again" onclick="startNewGame()">Play Again</button>
     </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div>
+      <h1>Sportle</h1>
+      <div class="subtitle">Sports Word Game</div>
+    </div>
+    <button class="help-btn" onclick="document.getElementById('helpModal').classList.remove('hidden')">?</button>
   </header>
 
-  <!-- About -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <div class="row align-items-center gy-4">
-        <div class="col-md-4 text-center">
-          <div class="avatar-circle mx-auto d-flex align-items-center justify-content-center">
-            <span class="avatar-initials">EH</span>
-          </div>
-        </div>
-        <div class="col-md-8">
-          <h2 class="section-title">About Me</h2>
-          <p class="lead">Hi! I'm Ethan Hodges, a driven and service-oriented student at Brigham Young University. I'm passionate about community, leadership, and making a difference — whether that's through co-founding a nonprofit, serving others, or pursuing my academic goals.</p>
-          <p>Outside of school I love photography, videography, basketball, and track &amp; field. I also speak French!</p>
-          <div class="contact-badges mt-3">
-            <span class="badge-contact"><i class="bi bi-telephone-fill"></i> (805)-551-9670</span>
-            <span class="badge-contact"><i class="bi bi-envelope-fill"></i> ethanhodges2207@gmail.com</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="back-bar">
+    <a href="index.html">← Brawl Stars Page</a>
+    <a href="professional.html">Portfolio</a>
+  </div>
 
-  <!-- Education -->
-  <section id="education" class="py-5 bg-light-section">
-    <div class="container">
-      <h2 class="section-title text-center mb-5">Education</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="resume-card">
-            <div class="d-flex justify-content-between align-items-start flex-wrap">
-              <div>
-                <h4 class="fw-bold">Moorpark High School</h4>
-                <p class="text-muted mb-1">Provo, UT (attending BYU — first semester)</p>
-              </div>
-              <span class="badge-year">Class of 2025</span>
-            </div>
-            <hr/>
-            <ul class="resume-list">
-              <li>Unweighted GPA: <strong>3.97 / 4.00</strong> &nbsp;|&nbsp; Weighted GPA: <strong>4.25 / 4.00</strong></li>
-              <li>ACT Score: <strong>33 / 36</strong></li>
-              <li>Board/Management Leadership Scholarship &amp; Rudy Perez Memorial Scholarship</li>
-              <li>Member of <strong>National Honors Society</strong>, California Scholarship Federation, and Health Science Academy</li>
-              <li>AP Macroeconomics — Score: <strong>4</strong></li>
-              <li>Principal's Honor Roll, Academic Achievement Award, and Honor Graduate</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div id="message"></div>
+  <div id="board"></div>
+  <div id="keyboard"></div>
 
-  <!-- Experience -->
-  <section id="experience" class="py-5">
-    <div class="container">
-      <h2 class="section-title text-center mb-5">Work Experience</h2>
-      <div class="row gy-4">
-
-        <div class="col-md-4">
-          <div class="resume-card h-100">
-            <div class="card-icon"><i class="bi bi-cup-hot-fill"></i></div>
-            <h5 class="fw-bold mt-2">Command Performance Catering</h5>
-            <p class="text-muted small">Server &bull; Aug 2024 – Aug 2025 &bull; Moorpark, CA</p>
-            <ul class="resume-list">
-              <li>Set up and arranged wedding venues; prepared and passed appetizers</li>
-              <li>Collaborated as a team to complete event tasks efficiently</li>
-              <li>Created a welcoming atmosphere for guests</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="resume-card h-100">
-            <div class="card-icon"><i class="bi bi-tree-fill"></i></div>
-            <h5 class="fw-bold mt-2">Tierra Rejada Equestrian Center</h5>
-            <p class="text-muted small">Ranch Hand &bull; Jun 2024 – Aug 2024 &bull; Moorpark, CA</p>
-            <ul class="resume-list">
-              <li>Dug out and lined fencing for a functioning horse arena</li>
-              <li>Worked with multiple tools and team members on physical construction</li>
-              <li>Delivered a completed, operational arena for the ranch owner</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="resume-card h-100">
-            <div class="card-icon"><i class="bi bi-heart-pulse-fill"></i></div>
-            <h5 class="fw-bold mt-2">Hodges Orthodontics</h5>
-            <p class="text-muted small">Assistant &bull; Jan 2023 – Jun 2024 &bull; Moorpark, CA</p>
-            <ul class="resume-list">
-              <li>Cleaned orthodontic instruments, chairs, and counters</li>
-              <li>Scanned patients' teeth using digital scanning tools</li>
-              <li>Kept the office running smoothly and helped patients stay on schedule</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Leadership & Service -->
-  <section id="leadership" class="py-5 bg-light-section">
-    <div class="container">
-      <h2 class="section-title text-center mb-5">Leadership &amp; Service</h2>
-      <div class="row gy-4 justify-content-center">
-
-        <div class="col-md-5">
-          <div class="resume-card h-100">
-            <div class="card-icon"><i class="bi bi-people-fill"></i></div>
-            <h5 class="fw-bold mt-2">Charitable Youth Foundation</h5>
-            <p class="text-muted small">Co-Founder &bull; Oct 2022 – Present &bull; Moorpark, CA</p>
-            <ul class="resume-list">
-              <li>Led monthly meetings focused on providing orthodontic care to those in need</li>
-              <li>Ran fundraisers and community outreach activities for the nonprofit</li>
-              <li>Helped community members access free orthodontic care they couldn't afford</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-5">
-          <div class="resume-card h-100">
-            <div class="card-icon"><i class="bi bi-star-fill"></i></div>
-            <h5 class="fw-bold mt-2">Church of Jesus Christ of Latter-day Saints</h5>
-            <p class="text-muted small">Stake Youth Leadership Committee &bull; Aug 2023 – Aug 2024 &bull; Thousand Oaks, CA</p>
-            <ul class="resume-list">
-              <li>Participated in monthly leadership meetings to support youth in the stake</li>
-              <li>Planned stake activities that were both fun and spiritually enriching</li>
-              <li>Helped youth build friendships and strengthen their faith</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills & Interests -->
-  <section id="skills" class="py-5">
-    <div class="container">
-      <h2 class="section-title text-center mb-5">Skills &amp; Interests</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <div class="row gy-3 text-center">
-            <div class="col-6 col-md-3">
-              <div class="skill-badge"><i class="bi bi-chat-quote-fill"></i><br/>French<br/><small>2 Years Fluency</small></div>
-            </div>
-            <div class="col-6 col-md-3">
-              <div class="skill-badge"><i class="bi bi-camera-fill"></i><br/>Photography &amp;<br/>Videography</div>
-            </div>
-            <div class="col-6 col-md-3">
-              <div class="skill-badge"><i class="bi bi-dribbble"></i><br/>Basketball &amp;<br/>Track &amp; Field</div>
-            </div>
-            <div class="col-6 col-md-3">
-              <div class="skill-badge"><i class="bi bi-gift-fill"></i><br/>Christmas Event<br/>Volunteer</div>
-            </div>
-          </div>
-          <div class="text-center mt-4">
-            <span class="trait-pill">Responsible</span>
-            <span class="trait-pill">On Time</span>
-            <span class="trait-pill">Coachable</span>
-            <span class="trait-pill">Hard-working</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer-section text-center py-4 text-white">
-    <p class="mb-0">&copy; 2025 Ethan R. Hodges &mdash; Built for IS 201</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Shrink navbar on scroll
-    window.addEventListener('scroll', () => {
-      document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+    // ── Word List ──
+    const WORDS = [
+      // Classic 5-letter sports words
+      "DRIVE","PITCH","CATCH","GUARD","SCORE","POINT","RELAY","SERVE","BLOCK","SWING",
+      "STRIK","BOUND","SPIKE","PRESS","FIELD","BREAK","FLOOR","SHOOT","MATCH","FRAME",
+      "BLITZ","REACH","GLOVE","SKATE","WEDGE","PLACE","ROUND","COURT","STEAL","DRIBBLE".slice(0,5),
+      "BATON","CHEER","MEDAL","RALLY","TIMER","HURLS","THROW","ALLEY","BOXER","BASES",
+      "GOALI","GOOFS","PUNTS","KICKS","ZONES","SQUAD","COACH","TRAPS","COVER","TALLY",
+      "GRAND","SPRIN","SPORT","JUMPS","BOARD","GRABS","FLAGS","TEAMS","VAULT","LINER",
+      "HOMER","BAILS","BIRDY","BOGEY","EAGLE","IRONS","PUTT" ,"CLUBS","WEDGE","CADDY",
+      "LANER","LANES","FOULS","DUNKS","LAYUP","ALLEY","POSTS","RIFTE","PENAL","GOALS",
+      "PUCKS","GOALT","SAVES","TACKS","BOXER","HOOKS","JABS" ,"CROSS","UPPER","ROPES",
+      "TRACK","RELAY","HURDA","LAPSE","PACES","WATTS","MILES","TIMED","CLOCK","SPLIT",
+      // More clear 5-letter sports words
+      "STEAL","SLIDE","BLIMP","BENCH","CHAMP","DRAFT","TRADE","SCOUT","AGENT","OWNER",
+      "CROWD","ARENA","FIELD","TURF" ,"GRASS","CHALK","LIGHT","NIGHT","BLOWN","BONUS",
+      "POINT","POWER","SUPER","OUTER","INNER","FIRST","THIRD","RIGHT","SHORT","QUICK"
+    ]
+    // Filter to exactly 5 letters and unique
+    .map(w => w.trim().toUpperCase())
+    .filter(w => w.length === 5);
+
+    const WORD_POOL = [...new Set(WORDS)];
+
+    // A curated list of clean valid 5-letter sports words for guessing
+    const VALID_GUESSES = new Set([
+      ...WORD_POOL,
+      // Allow any real 5-letter word attempt
+      "ABOUT","ABOVE","ABUSE","ACTOR","AFTER","AGAIN","AGENT","AGREE","AHEAD","ALARM",
+      "ALBUM","ALERT","ALIKE","ALIVE","ALLEY","ALLOW","ALONE","ALONG","ALTER","ANGEL",
+      "ANGER","ANGLE","ANGRY","ANIME","ANKLE","APART","APPLE","APPLY","ARENA","ARGUE",
+      "ARISE","ARROW","ASIDE","ASKED","ASSET","AVOID","AWAKE","AWARD","AWFUL","BADLY",
+      "BAKER","BALLS","BANDS","BANKS","BASED","BASIC","BASIN","BASES","BATCH","BEACH",
+      "BEAMS","BEGAN","BEGIN","BEING","BELOW","BENCH","BIRTH","BLACK","BLADE","BLAME",
+      "BLANK","BLAST","BLEED","BLEND","BLESS","BLIND","BLOCK","BLOOD","BLOWN","BOARD",
+      "BOOST","BOUND","BOXER","BRAIN","BRAND","BRAVE","BREAD","BREAK","BREED","BRIEF",
+      "BRING","BROKE","BROOK","BROWN","BRUSH","BUILD","BUILT","BURST","BUYER","CABIN",
+      "CABLE","CAMEL","CANDY","CARRY","CATCH","CAUSE","CHAIN","CHALK","CHAMP","CHAOS",
+      "CHEAP","CHECK","CHEEK","CHEER","CHEST","CHIEF","CHILD","CHINA","CLAIM","CLASS",
+      "CLEAN","CLEAR","CLERK","CLICK","CLOCK","CLOSE","CLOUD","COACH","COSTS","COULD",
+      "COUNT","COURT","COVER","CRACK","CRAFT","CRANE","CRAZY","CRIME","CROSS","CROWD",
+      "CRUEL","CRUSH","CURVE","CYCLE","DAILY","DANCE","DEALT","DEATH","DEBUT","DELAY",
+      "DEPTH","DRAFT","DRAIN","DRAMA","DRAW" ,"DRAWN","DREAM","DRESS","DRIFT","DRINK",
+      "DRIVE","DROPS","DROVE","DRUGS","DRUMS","DYING","EARLY","EARTH","EIGHT","ELITE",
+      "EMPTY","ENEMY","EQUAL","ERROR","ESSAY","EVERY","EXACT","EXTRA","FAINT","FAITH",
+      "FALSE","FANCY","FAULT","FEAST","FENCE","FIELD","FIFTH","FIFTY","FIGHT","FINAL",
+      "FIRST","FIXED","FLAME","FLEET","FLESH","FLIES","FLOAT","FLOOD","FLOOR","FOCUS",
+      "FORCE","FORGE","FORTH","FORTY","FORUM","FOUND","FRAME","FRANK","FRAUD","FRESH",
+      "FRONT","FRUIT","FULLY","FUNDS","GAMES","GAUGE","GHOST","GIANT","GIVEN","GLOOM",
+      "GLOVE","GOING","GRACE","GRADE","GRAIN","GRAND","GRANT","GRAPH","GRASP","GRASS",
+      "GRAVE","GREED","GREEN","GRIEF","GRIND","GROAN","GROUP","GROVE","GROWN","GUARD",
+      "GUESS","GUEST","GUIDE","GUILD","GUILT","GUISE","HAPPY","HARSH","HEART","HEAVY",
+      "HENCE","HIGH" ,"HILLS","HOLDS","HOLES","HONOR","HOOKS","HOPED","HORSE","HOTEL",
+      "HOUSE","HUMAN","HURTS","IDEAS","IMAGE","IMPLY","INFER","INNER","INPUT","ISSUE",
+      "ITEMS","JUDGE","JUICE","JUICY","KEEPS","KNIFE","KNOCK","KNOWN","LARGE","LASER",
+      "LATER","LAUGH","LAYER","LEADS","LEAPS","LEARN","LEAVE","LEGAL","LEMON","LEVEL",
+      "LIGHT","LIMIT","LINEN","LINKS","LIVES","LOCAL","LOGIC","LOOSE","LOWER","LUCKY",
+      "MAGIC","MAJOR","MAKER","MARCH","MATCH","MAYBE","MEANT","MEDIA","MERCY","METAL",
+      "MIGHT","MINOR","MINUS","MONEY","MONTH","MORAL","MOTOR","MOUNT","MOUSE","MOUTH",
+      "MOVED","MOVIE","MUSIC","NAIVE","NEEDS","NERVE","NEVER","NIGHT","NOBLE","NOISE",
+      "NOTED","NOVEL","NURSE","OCCUR","OFFER","OFTEN","ORDER","OTHER","OUTER","OWNED",
+      "OWNER","OZONE","PAINT","PANEL","PAPER","PARTY","PAUSE","PEACE","PENNY","PHASE",
+      "PHONE","PHOTO","PIECE","PILOT","PITCH","PIXEL","PLACE","PLAIN","PLANE","PLANT",
+      "PLATE","PLAZA","PLEAD","PLAYS","PLAZA","POLAR","POWER","PRESS","PRICE","PRIDE",
+      "PRIME","PRINT","PRIOR","PRIZE","PROBE","PROOF","PROUD","PROVE","QUEEN","QUERY",
+      "QUEUE","QUICK","QUIET","QUITE","QUOTA","QUOTE","RADAR","RADIO","RAISE","RALLY",
+      "RANGE","RAPID","RATIO","REACH","REALM","REBEL","REFER","REIGN","RELAX","RELAY",
+      "REPLY","RIGHT","RIGID","RISKY","RIVAL","RIVER","ROBOT","ROCKY","ROMAN","ROUGH",
+      "ROUND","ROYAL","RULER","RURAL","SADLY","SAINT","SAUCE","SCALE","SCARY","SCENE",
+      "SCOPE","SCORE","SCOUT","SEIZE","SENSE","SERVE","SEVEN","SHADE","SHAKE","SHALL",
+      "SHAME","SHAPE","SHARE","SHARP","SHIFT","SHIRT","SHOCK","SHORT","SIGHT","SILLY",
+      "SINCE","SIXTH","SIXTY","SIZED","SKILL","SKIRT","SLASH","SLATE","SLAVE","SLEEP",
+      "SLIDE","SLOPE","SMART","SMILE","SMOKE","SNAKE","SOLAR","SOLVE","SORRY","SOUTH",
+      "SPACE","SPARE","SPARK","SPEAK","SPEED","SPEND","SPENT","SPILL","SPINE","SPITE",
+      "SPLIT","SPOKE","SQUAD","STAFF","STAGE","STAKE","STAND","START","STATE","STAYS",
+      "STEAL","STEAM","STEEL","STEEP","STEER","STICK","STILL","STOCK","STORE","STORM",
+      "STORY","STUCK","STUDY","STYLE","SUGAR","SUITE","SUPER","SURGE","SWEET","SWIFT",
+      "SWING","SWORD","TABLE","TAKEN","TASTE","TAXES","TEARS","TELLS","TENSE","TENTH",
+      "TERMS","THEME","THICK","THING","THINK","THIRD","THOSE","THREE","THREW","THROW",
+      "TIGHT","TIMES","TIRED","TITLE","TODAY","TOKEN","TOPIC","TOTAL","TOUCH","TOUGH",
+      "TOWER","TOXIC","TRACK","TRADE","TRAIL","TRAIN","TRAIT","TRASH","TRIAL","TRIBE",
+      "TRIED","TRUST","TUMOR","TUTOR","TWICE","TWIST","UNDER","UNION","UNITY","UNTIL",
+      "UPPER","UPSET","URBAN","USAGE","USUAL","UTTER","VALID","VALUE","VIDEO","VIRUS",
+      "VISIT","VITAL","VOICE","VOTER","WASTE","WATCH","WATER","WEARY","WEIGH","WEIRD",
+      "WHERE","WHICH","WHILE","WHITE","WHOLE","WHOSE","WITCH","WOMAN","WOMEN","WORLD",
+      "WORRY","WORSE","WORST","WORTH","WOULD","WOUND","WRIST","WROTE","YACHT","YIELD",
+      "YOUNG","YOUTH","ZEBRA","ZONES",
+      // Sports specific
+      "DRIVE","BIRDY","BOGEY","EAGLE","HOMER","FOULS","DUNKS","LAYUP","HOOKS","JABS",
+      "HURLS","PUNTS","KICKS","BASES","GOALI","PUCKS","SAVES","CADDY","PUTT" ,
+    ].map(w => w.toUpperCase()));
+
+    // ── Game State ──
+    let targetWord = '';
+    let currentRow = 0;
+    let currentCol = 0;
+    let currentGuess = [];
+    let gameOver = false;
+    let board = [];
+    let keyColors = {};
+    let gamesPlayed = 0;
+    let gamesWon = 0;
+    let currentStreak = 0;
+
+    // ── Build Board ──
+    function buildBoard() {
+      const boardEl = document.getElementById('board');
+      boardEl.innerHTML = '';
+      board = [];
+      for (let r = 0; r < 6; r++) {
+        const row = document.createElement('div');
+        row.classList.add('row');
+        row.id = `row-${r}`;
+        const rowTiles = [];
+        for (let c = 0; c < 5; c++) {
+          const tile = document.createElement('div');
+          tile.classList.add('tile');
+          tile.id = `tile-${r}-${c}`;
+          row.appendChild(tile);
+          rowTiles.push(tile);
+        }
+        boardEl.appendChild(row);
+        board.push(rowTiles);
+      }
+    }
+
+    // ── Build Keyboard ──
+    const ROWS_KB = [
+      ['Q','W','E','R','T','Y','U','I','O','P'],
+      ['A','S','D','F','G','H','J','K','L'],
+      ['ENTER','Z','X','C','V','B','N','M','⌫']
+    ];
+
+    function buildKeyboard() {
+      const kbEl = document.getElementById('keyboard');
+      kbEl.innerHTML = '';
+      ROWS_KB.forEach(row => {
+        const rowDiv = document.createElement('div');
+        rowDiv.classList.add('kb-row');
+        row.forEach(key => {
+          const btn = document.createElement('button');
+          btn.classList.add('key');
+          btn.textContent = key;
+          btn.dataset.key = key;
+          if (key === 'ENTER' || key === '⌫') btn.classList.add('wide');
+          btn.addEventListener('click', () => handleKey(key));
+          rowDiv.appendChild(btn);
+        });
+        kbEl.appendChild(rowDiv);
+      });
+    }
+
+    // ── Handle Key Input ──
+    function handleKey(key) {
+      if (gameOver) return;
+      if (key === '⌫' || key === 'BACKSPACE') {
+        deleteLetter();
+      } else if (key === 'ENTER') {
+        submitGuess();
+      } else if (/^[A-Z]$/.test(key)) {
+        addLetter(key);
+      }
+    }
+
+    function addLetter(letter) {
+      if (currentCol >= 5) return;
+      const tile = board[currentRow][currentCol];
+      tile.textContent = letter;
+      tile.classList.add('filled', 'pop');
+      setTimeout(() => tile.classList.remove('pop'), 150);
+      currentGuess.push(letter);
+      currentCol++;
+      updateActiveTile();
+    }
+
+    function deleteLetter() {
+      if (currentCol <= 0) return;
+      currentCol--;
+      currentGuess.pop();
+      const tile = board[currentRow][currentCol];
+      tile.textContent = '';
+      tile.classList.remove('filled', 'active');
+      updateActiveTile();
+    }
+
+    function updateActiveTile() {
+      board[currentRow].forEach((t, i) => t.classList.toggle('active', i === currentCol && currentCol < 5));
+    }
+
+    function showMessage(msg, duration = 2000) {
+      const el = document.getElementById('message');
+      el.textContent = msg;
+      if (duration) setTimeout(() => { el.textContent = ''; }, duration);
+    }
+
+    async function checkRealWord(word) {
+      // First allow it if it's already in our word pool
+      if (WORD_POOL.includes(word)) return true;
+      try {
+        const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word.toLowerCase()}`);
+        return res.ok;
+      } catch {
+        // If API fails, allow the word so connectivity issues don't break the game
+        return true;
+      }
+    }
+
+    async function submitGuess() {
+      if (currentCol < 5) {
+        showMessage('Not enough letters!');
+        shakeRow(currentRow);
+        return;
+      }
+
+      const guess = currentGuess.join('');
+
+      // Check if it's a real word using the Free Dictionary API
+      const isReal = await checkRealWord(guess);
+      if (!isReal) {
+        showMessage('Not a real word!');
+        shakeRow(currentRow);
+        return;
+      }
+
+      // Evaluate
+      const result = evaluateGuess(guess, targetWord);
+      revealRow(currentRow, guess, result, () => {
+        updateKeyboard(guess, result);
+
+        if (guess === targetWord) {
+          gameOver = true;
+          gamesPlayed++;
+          gamesWon++;
+          currentStreak++;
+          setTimeout(() => showEndModal(true, currentRow + 1), 400);
+        } else if (currentRow === 5) {
+          gameOver = true;
+          gamesPlayed++;
+          currentStreak = 0;
+          setTimeout(() => showEndModal(false, 0), 400);
+        } else {
+          currentRow++;
+          currentCol = 0;
+          currentGuess = [];
+          updateActiveTile();
+        }
+      });
+    }
+
+    function evaluateGuess(guess, target) {
+      const result = Array(5).fill('absent');
+      const targetArr = target.split('');
+      const guessArr = guess.split('');
+      const used = Array(5).fill(false);
+
+      // First pass: correct
+      for (let i = 0; i < 5; i++) {
+        if (guessArr[i] === targetArr[i]) {
+          result[i] = 'correct';
+          used[i] = true;
+        }
+      }
+      // Second pass: present
+      for (let i = 0; i < 5; i++) {
+        if (result[i] === 'correct') continue;
+        for (let j = 0; j < 5; j++) {
+          if (!used[j] && guessArr[i] === targetArr[j]) {
+            result[i] = 'present';
+            used[j] = true;
+            break;
+          }
+        }
+      }
+      return result;
+    }
+
+    function revealRow(rowIdx, guess, result, callback) {
+      let delay = 0;
+      result.forEach((res, i) => {
+        setTimeout(() => {
+          const tile = board[rowIdx][i];
+          tile.classList.add('flip');
+          setTimeout(() => {
+            tile.classList.add(res);
+            tile.classList.remove('filled', 'active');
+          }, 250);
+          if (i === 4) setTimeout(callback, 300);
+        }, delay);
+        delay += 300;
+      });
+    }
+
+    function updateKeyboard(guess, result) {
+      const priority = { correct: 3, present: 2, absent: 1 };
+      guess.split('').forEach((letter, i) => {
+        const current = keyColors[letter];
+        if (!current || priority[result[i]] > priority[current]) {
+          keyColors[letter] = result[i];
+        }
+      });
+      document.querySelectorAll('.key').forEach(btn => {
+        const l = btn.dataset.key;
+        if (keyColors[l]) {
+          btn.className = 'key';
+          if (l === 'ENTER' || l === '⌫') btn.classList.add('wide');
+          btn.classList.add(keyColors[l]);
+        }
+      });
+    }
+
+    function shakeRow(rowIdx) {
+      const row = document.getElementById(`row-${rowIdx}`);
+      row.classList.add('shake');
+      setTimeout(() => row.classList.remove('shake'), 500);
+    }
+
+    function showEndModal(won, guessCount) {
+      document.getElementById('endTitle').textContent = won
+        ? ['Incredible!','Excellent!','Great!','Good Job!','Phew!','Lucky!'][guessCount - 1]
+        : 'Game Over';
+
+      const body = document.getElementById('endBody');
+      body.innerHTML = won
+        ? `<p>You got it in <strong>${guessCount}</strong> guess${guessCount > 1 ? 'es' : ''}!</p>
+           <p class="answer-reveal">${targetWord}</p>`
+        : `<p>The word was:</p><p class="answer-reveal">${targetWord}</p>`;
+
+      document.getElementById('statsRow').innerHTML = `
+        <div class="stat-box"><div class="stat-num">${gamesPlayed}</div><div class="stat-label">Played</div></div>
+        <div class="stat-box"><div class="stat-num">${Math.round(gamesWon/Math.max(gamesPlayed,1)*100)}</div><div class="stat-label">Win %</div></div>
+        <div class="stat-box"><div class="stat-num">${currentStreak}</div><div class="stat-label">Streak</div></div>
+      `;
+
+      document.getElementById('endModal').classList.remove('hidden');
+    }
+
+    function startNewGame() {
+      document.getElementById('endModal').classList.add('hidden');
+      document.getElementById('message').textContent = '';
+      currentRow = 0;
+      currentCol = 0;
+      currentGuess = [];
+      gameOver = false;
+      keyColors = {};
+      targetWord = WORD_POOL[Math.floor(Math.random() * WORD_POOL.length)];
+      buildBoard();
+      buildKeyboard();
+    }
+
+    // ── Physical Keyboard ──
+    document.addEventListener('keydown', e => {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      const k = e.key.toUpperCase();
+      if (k === 'BACKSPACE') handleKey('BACKSPACE');
+      else if (k === 'ENTER') handleKey('ENTER');
+      else if (/^[A-Z]$/.test(k)) handleKey(k);
+    });
+
+    // ── Init ──
+    startNewGame();
+    // Dismiss help modal on first play
+    document.querySelector('.modal-overlay').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.add('hidden');
+    });
+    document.getElementById('endModal').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.add('hidden');
     });
   </script>
+
 </body>
 </html>
